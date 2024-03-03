@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Create a dictionary to store all command shortcuts
+declare -A dirs
+
+# Add your shortcuts here
+# Example: dirs["shortcut_name"]="cd /path/to/your/directory"
+dirs['home']="cd ~"
+dirs['bashes']="cd ~/bashes"
+
+# you can also add other commands like
+# dirs['ls']="ls -l"
+# dirs['npm_start']="npm start"
+dirs['php_start']="php -S 127.0.0.1:8000"
+
+
+
+# Print all dirs available
+if [[ $1 == "--help" || $1 == "-h" ]]; then
+    for key in ${!dirs[@]}; do
+        echo "[" ${key} "]" $'\t' "->" ${dirs[${key}]}
+    done
+
+# Evaluate the command from dirs
+else
+    gotoPath=${dirs[$1]}
+    eval $gotoPath
+fi
+
+
