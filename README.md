@@ -14,5 +14,4 @@ A simple bash code to create shortcuts for lazy people. I mainly use this to go 
 
 # Usage
 
-1. Go to your messy folder
-2. type `pmenu <your-shortcut>`
+1. type `pmenu <your-shortcut>`in your terminal
